@@ -49,7 +49,7 @@ if (tempoFinal > 0) {
 } else {
   return "Prazo Finalizado";
 }
-
+}
 
 function comecaCronometro() {
   atualizaCronometro();
