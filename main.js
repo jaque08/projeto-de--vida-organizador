@@ -35,25 +35,23 @@ segundos %= 60;
 minutos %= 60;
 horas %= 24;
 
-if (tempoFinal > 0) {
-  return (
-    dias +
-    " dias " +
-    horas +
-    " horas " +
-    minutos +
-    " minutos " +
-    segundos +
-    " segundos"
-  );
-} else {
-  return "Prazo Finalizado";
+    if (tempoFinal > 0) {
+        return (dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos");
+    } else {
+        return "Prazo Finalizado";
+    }
+
 }
+
+function atualizaCronometro() {
+    for (let i = 0; i < contadores.length; i++) {
+        contadores[i].textContent = calculaTempo(tempos[i]);
+    }
 }
 
 function comecaCronometro() {
-  atualizaCronometro();
-  setInterval(atualizaCronometro, 1000);
+    atualizaCronometro();
+    setInterval(atualizaCronometro, 1000);
 }
 
 comecaCronometro();
